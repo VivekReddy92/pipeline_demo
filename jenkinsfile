@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('scm checkout') {
+            steps {
+                git 'https://github.com/jleetutorial/maven-project.git'
+            }
+        }
+        
+        stage('mvn version') {
+            steps {
+                sh label: '', script: 'git status'
+            }
+        }
+                stage('hello version') {
+            steps {
+                sh label: '', script: 'git init'
+            }
+        }
+    }
+}
